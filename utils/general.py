@@ -864,8 +864,8 @@ def non_max_suppression_kpt(prediction, conf_thres=0.25, iou_thres=0.45, classes
         # Batched NMS
         c = x[:, 5:6] * (0 if agnostic else max_wh)  # classes
         boxes, scores = x[:, :4] + c, x[:, 4]  # boxes (offset by class), scores
-        i = torchvision.ops.nms(boxes, scores, iou_thres)  # NMS
-        #i = soft_nms(boxes, scores, iou_thres)
+        #i = torchvision.ops.nms(boxes, scores, iou_thres)  # NMS
+        i = soft_nms(boxes, scores, iou_thres)
         if i.shape[0] > max_det:  # limit detections
             i = i[:max_det]
         if merge and (1 < n < 3E3):  # Merge NMS (boxes merged using weighted mean)
