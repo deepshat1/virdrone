@@ -1,0 +1,9 @@
+train: /home/zhaoll/project/yolov7-main/data/ImageSets/main/train.txt
+val: /home/zhaoll/project/yolov7-main/data/ImageSets/main/val.txt
+ 
+# number of classes
+nc: 4
+ 
+# class names
+names: ['car', 'person', 'bike', 'motor']
+

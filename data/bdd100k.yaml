@@ -1,0 +1,10 @@
+train: /home/xiaoyin/project/yolov7-main/data/ImageSets/main/train.txt
+val: /home/xiaoyin/project/yolov7-main/data/ImageSets/main/val.txt
+test: /home/xiaoyin/project/yolov7-main/data/ImageSets/main/text.txt
+ 
+# number of classes
+nc: 10
+ 
+# class names
+names: ['car', 'bus', 'person', 'bike', 'truck', 'motor', 'train', 'rider', 'traffic sign', 'traffic light']
+
