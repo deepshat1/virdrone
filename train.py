@@ -526,10 +526,10 @@ def train(hyp, opt, device, tb_writer=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default='/home/yolov7-yiwu/runs/yolov7-yiwu/shuff/exp2/weights/last.pt', help='initial weights path')
-    parser.add_argument('--cfg', type=str, default='/home/yolov7-yiwu/cfg/training/yolov7_shufflev2_gsconv-yiwu.yaml', help='model.yaml path')
-    parser.add_argument('--data', type=str, default='/home/yolov7-yiwu/data/yiwu.yaml', help='data.yaml path')
-    parser.add_argument('--hyp', type=str, default='/home/yolov7-yiwu/data/hyp.scratch.p5-yiwu.yaml', help='hyperparameters path')
+    parser.add_argument('--weights', type=str, default='', help='initial weights path')
+    parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
+    parser.add_argument('--data', type=str, default='', help='data.yaml path')
+    parser.add_argument('--hyp', type=str, default='', help='hyperparameters path')
     parser.add_argument('--epochs', type=int, default=500)
     parser.add_argument('--batch-size', type=int, default=20, help='total batch size for all GPUs')
     parser.add_argument('--img-size', nargs='+', type=int, default=[640, 640], help='[train, test] image sizes')
@@ -549,7 +549,7 @@ if __name__ == '__main__':
     parser.add_argument('--sync-bn', action='store_true', help='use SyncBatchNorm, only available in DDP mode')
     parser.add_argument('--local_rank', type=int, default=-1, help='DDP parameter, do not modify')
     parser.add_argument('--workers', type=int, default=1, help='maximum number of dataloader workers')
-    parser.add_argument('--project', default='runs/yolov7-yiwu/shuff', help='save to project/name')
+    parser.add_argument('--project', default='runs', help='save to project/name')
     parser.add_argument('--entity', default=None, help='W&B entity')
     parser.add_argument('--name', default='exp', help='save to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
